@@ -1,7 +1,7 @@
 // Include standard headers
-#include <glm/detail/qualifier.hpp>
-#include <glm/ext/matrix_transform.hpp>
-#include <glm/ext/vector_float3.hpp>
+// #include <glm/detail/qualifier.hpp>
+// #include <glm/ext/matrix_transform.hpp>
+// #include <glm/ext/vector_float3.hpp>
 #include <glm/trigonometric.hpp>
 #include <stdio.h>
 #include <stdlib.h>
@@ -68,6 +68,9 @@ glm::mat4 TransformationMatrix2;
 glm::mat4 TransformationMatrix3;
 glm::vec3 scaleTransformation = glm::vec3(1.0f,1.0f,1.0f);
 glm::vec3 translationTransformation = glm::vec3(0.0f,0.0f,0.0f);
+float radiansChaise3 = 10.0f; // Angle de rotation pour la 3ème chaise
+float radiansSuzanne = 10.f; // Angle de rotation pour Suzanne
+
 
 glm::mat4 getViewMatrix(){
 	return ViewMatrix;
@@ -145,13 +148,13 @@ void initLight () {
 void init () {
     // camera.resize (SCREENWIDTH, SCREENHEIGHT);
     initLight ();
-    // glCullFace (GL_BACK);
-    // glEnable (GL_CULL_FACE);
+    glCullFace (GL_BACK);
+    glEnable (GL_CULL_FACE);
     glDepthFunc (GL_LESS);
     glEnable (GL_DEPTH_TEST);
     glClearColor (0.5f, 0.5f, 0.5f, 1.0f);
     glEnable(GL_COLOR_MATERIAL);
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
     // Initialize GLEW
     glewExperimental = true; // Needed for core profile
@@ -173,12 +176,26 @@ void draw () {
     glUseProgram(programID);
     // Model matrix : an identity matrix (model will be at the origin) then change
 
+    glm::mat4 ModelMatrix = glm::mat4(1.0f);
+
     // View matrix : camera/view transformation lookat() utiliser camera_position camera_target camera_up
+
+    glm::mat4 ViewMatrix = glm::lookAt(camera_position,camera_target,camera_up);
 
     // Projection matrix : 45 Field of View, 4:3 ratio, display range : 0.1 unit <-> 100 units
 
+    glm::mat4 ProjectionMatrix = glm::perspective(glm::radians(45.0f),4.0f / 3.0f, 0.1f, 100.0f);
+
     // Send our transformation to the currently bound shader,
     // in the "Model View Projection" to the shader uniforms
+
+    GLuint ModelMatrixLocation = glGetUniformLocation(programID,"ModelMatrix");
+    GLuint ViewMatrixLocation = glGetUniformLocation(programID,"ViewMatrix");
+    GLuint ProjectionMatrixLocation = glGetUniformLocation(programID,"ProjectionMatrix");
+
+    glUniformMatrix4fv(ModelMatrixLocation,1,GL_FALSE,(const GLfloat *)&ModelMatrix[0]);
+    glUniformMatrix4fv(ViewMatrixLocation,1,GL_FALSE,(const GLfloat *)&ViewMatrix[0]);
+    glUniformMatrix4fv(ProjectionMatrixLocation,1,GL_FALSE,(const GLfloat *)&ProjectionMatrix[0]);
 
     // 1rst attribute buffer : vertices
     glEnableVertexAttribArray(0);
@@ -202,15 +219,15 @@ void draw () {
 
     // Afficher une seconde chaise
 
-    glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix2[0]);
+    // glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix2[0]);
 
-    glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
+    // glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
 
     // Afficher une troisieme chaise!
 
-    glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix3[0]);
+    // glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix3[0]);
 
-    glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
+    // glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
 
     glDisableVertexAttribArray(0);
 }
@@ -253,55 +270,95 @@ void key (unsigned char keyPressed, int x, int y) {
         camera_position += cameraSpeed * camera_target;
         break;
     
-    // case '+':
-    //     scaleTransformation += glm::vec3(0.1f);
-    //     TransformationMatrix = glm::mat4(1.0f);
-    //     TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-    //     TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-    //     glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
-    //     break;
+    case '+':
+        scaleTransformation += glm::vec3(0.1f);
+        TransformationMatrix = glm::mat4(1.0f);
+        TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
+        TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
+        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
+        break;
     
-    // case '-':
-    //     if(scaleTransformation.x > 0.0f) { // Condition pour limiter la mise à l'échelle (si x est > 0, alors y et z aussi vu l'implémentation)
-    //         scaleTransformation -= glm::vec3(0.1f);
-    //         TransformationMatrix = glm::mat4(1.0f);
-    //         TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-    //         TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-    //         glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
-    //     }
-    //     break;
+    case '-':
+        if(scaleTransformation.x > 0.0f) { // Condition pour limiter la mise à l'échelle (si x est > 0, alors y et z aussi vu l'implémentation)
+            scaleTransformation -= glm::vec3(0.1f);
+            TransformationMatrix = glm::mat4(1.0f);
+            TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
+            TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
+            glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
+        }
+        break;
 
-    // case 'd':
-    //     translationTransformation += glm::vec3(0.1f,0.0f,0.0f);
-    //     TransformationMatrix = glm::mat4(1.0f);
-    //     TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-    //     TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-    //     glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
-    //     break;
+    case 'd':
+        translationTransformation += glm::vec3(0.1f,0.0f,0.0f);
+        TransformationMatrix = glm::mat4(1.0f);
+        TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
+        TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
+        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
+        break;
 
-    // case 'q':
-    //     translationTransformation -= glm::vec3(0.1f,0.0f,0.0f);
-    //     TransformationMatrix = glm::mat4(1.0f);
-    //     TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-    //     TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-    //     glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
-    //     break;
+    case 'q':
+        translationTransformation -= glm::vec3(0.1f,0.0f,0.0f);
+        TransformationMatrix = glm::mat4(1.0f);
+        TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
+        TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
+        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
+        break;
 
-    // case 'z':
-    //     translationTransformation += glm::vec3(0.0f,0.1f,0.0f);
-    //     TransformationMatrix = glm::mat4(1.0f);
-    //     TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-    //     TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-    //     glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
-    //     break;
+    case 'z':
+        translationTransformation += glm::vec3(0.0f,0.1f,0.0f);
+        TransformationMatrix = glm::mat4(1.0f);
+        TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
+        TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
+        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
+        break;
 
-    // case 's':
-    //     translationTransformation -= glm::vec3(0.0f,0.1f,0.0f);
-    //     TransformationMatrix = glm::mat4(1.0f);
-    //     TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-    //     TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-    //     glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
-    //     break;
+    case 's':
+        translationTransformation -= glm::vec3(0.0f,0.1f,0.0f);
+        TransformationMatrix = glm::mat4(1.0f);
+        TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
+        TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
+        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
+        break;
+
+    case '3': {
+        glm::mat4 trans1 = glm::translate(glm::mat4(1.0f),glm::vec3(0.0f,-0.5f,0.0f));
+        glm::mat4 rot = glm::rotate(glm::mat4(1.0f),glm::radians(radiansChaise3),glm::vec3(0.0f,0.0f,1.0f));
+        glm::mat4 trans2 = glm::translate(glm::mat4(1.0f),glm::vec3(0.0f,0.5f,0.0f));
+        TransformationMatrix3 = (trans2 * rot) * trans1;
+        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix3[0]);
+        radiansChaise3 += 10.0f;
+        break;
+    }
+
+    case 'r':
+        TransformationMatrix = glm::rotate(glm::mat4(1.0f),glm::radians(radiansSuzanne),glm::vec3(1.0f,1.0f,1.0f)); // Rotations selon les trois axes
+        radiansSuzanne+=10.0f;
+        break;
+
+    case 'l': {
+        glm::vec3 axeObjet = glm::vec3(0.0f,0.1f,0.0f);
+        glm::vec3 vecteurCible = glm::vec3(1.0f,1.0f,1.0f);
+        glm::vec3 axeRotation = glm::cross(axeObjet,vecteurCible); // Axe de la rotation
+        float angle = glm::acos(glm::dot(axeObjet,vecteurCible)); // Angle de la rotation
+        glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f),angle,axeRotation);
+        TransformationMatrix = rotationMatrix * TransformationMatrix;
+    }
+
+    case 'u':
+        camera_position += glm::vec3(0.0f,cameraSpeed,0.0f);
+        break;
+
+    case 'j':
+        camera_position -= glm::vec3(0.0f,cameraSpeed,0.0f);
+        break;
+
+    case 'h':
+        camera_position -= glm::vec3(cameraSpeed,0.0f,0.0f);
+        break;
+
+    case 'k':
+        camera_position += glm::vec3(cameraSpeed,0.0f,0.0f);
+        break;
 
     default:
         break;
@@ -419,13 +476,13 @@ int main (int argc, char ** argv) {
     programID = LoadShaders( "vertex_shader.glsl", "fragment_shader.glsl" );
 
     //Chargement du fichier de maillage
-    std::string filename("data/chair.off");
+    std::string filename("data/suzanne.off");
     loadOFF(filename, indexed_vertices, indices, triangles );
 
     transformationMatrixID = glGetUniformLocation(programID,"TransformationMatrix");
-    TransformationMatrix = glm::translate(glm::mat4(1.0f),glm::vec3(-0.5f,-1.0f,0)) * glm::scale(glm::mat4(1.0f),glm::vec3(0.5f,0.5f,0.5f));
-    TransformationMatrix2 = glm::translate(glm::mat4(1.0f),glm::vec3(0.5f,-1.0f,0)) * glm::scale(glm::mat4(1.0f),glm::vec3(-0.5f,0.5f,0.5f));
-    TransformationMatrix3 = glm::rotate(glm::mat4(1.0f),glm::radians(45.0f),glm::vec3(1.0f,1.0f,1.0f));
+    TransformationMatrix = glm::mat4(1.0f);
+    //TransformationMatrix = glm::translate(glm::mat4(1.0f),glm::vec3(-0.5f,-1.0f,0)) * glm::scale(glm::mat4(1.0f),glm::vec3(0.5f,0.5f,0.5f));
+    //TransformationMatrix2 = glm::translate(glm::mat4(1.0f),glm::vec3(0.5f,-1.0f,0)) * glm::scale(glm::mat4(1.0f),glm::vec3(-0.5f,0.5f,0.5f));
 
     // Load it into a VBO
 
