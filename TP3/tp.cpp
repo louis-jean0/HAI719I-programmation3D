@@ -1,7 +1,8 @@
 // Include standard headers
-// #include <glm/detail/qualifier.hpp>
-// #include <glm/ext/matrix_transform.hpp>
-// #include <glm/ext/vector_float3.hpp>
+#include <glm/detail/qualifier.hpp>
+#include <glm/ext/matrix_transform.hpp>
+#include <glm/ext/vector_float3.hpp>
+#include <glm/matrix.hpp>
 #include <glm/trigonometric.hpp>
 #include <stdio.h>
 #include <stdlib.h>
@@ -69,8 +70,11 @@ glm::mat4 TransformationMatrix3;
 glm::vec3 scaleTransformation = glm::vec3(1.0f,1.0f,1.0f);
 glm::vec3 translationTransformation = glm::vec3(0.0f,0.0f,0.0f);
 float radiansChaise3 = 10.0f; // Angle de rotation pour la 3ème chaise
-float radiansSuzanne = 10.f; // Angle de rotation pour Suzanne
-
+float radiansSuzanne = 10.0f; // Angle de rotation pour Suzanne
+float angleEarthSun = 0.0f;
+float angleEarthEarth = 0.0f;
+float angleMoonEarth = 0.0f;
+float angleSunSun = 0.0f;
 
 glm::mat4 getViewMatrix(){
 	return ViewMatrix;
@@ -78,7 +82,6 @@ glm::mat4 getViewMatrix(){
 glm::mat4 getProjectionMatrix(){
 	return ProjectionMatrix;
 }
-
 
 // Initial position : on +Z
 glm::vec3 position = glm::vec3( 0, 0, 0 );
@@ -148,8 +151,8 @@ void initLight () {
 void init () {
     // camera.resize (SCREENWIDTH, SCREENHEIGHT);
     initLight ();
-    glCullFace (GL_BACK);
-    glEnable (GL_CULL_FACE);
+    // glCullFace (GL_BACK);
+    // glEnable (GL_CULL_FACE);
     glDepthFunc (GL_LESS);
     glEnable (GL_DEPTH_TEST);
     glClearColor (0.5f, 0.5f, 0.5f, 1.0f);
@@ -165,9 +168,6 @@ void init () {
 
 }
 
-
-
-
 // ------------------------------------
 // rendering.
 // ------------------------------------
@@ -176,7 +176,11 @@ void draw () {
     glUseProgram(programID);
     // Model matrix : an identity matrix (model will be at the origin) then change
 
-    glm::mat4 ModelMatrix = glm::mat4(1.0f);
+    glm::mat4 ModelMatrixSun = glm::mat4(1.0f);
+    float sunSunSpeed = 0.1f;
+    angleSunSun += sunSunSpeed * deltaTime;
+    ModelMatrixSun = glm::scale(ModelMatrixSun,glm::vec3(0.5f,0.5f,0.5f));
+    ModelMatrixSun = glm::rotate(ModelMatrixSun,glm::radians(angleSunSun),glm::vec3(0.0f,1.0f,0.0f));
 
     // View matrix : camera/view transformation lookat() utiliser camera_position camera_target camera_up
 
@@ -193,7 +197,7 @@ void draw () {
     GLuint ViewMatrixLocation = glGetUniformLocation(programID,"ViewMatrix");
     GLuint ProjectionMatrixLocation = glGetUniformLocation(programID,"ProjectionMatrix");
 
-    glUniformMatrix4fv(ModelMatrixLocation,1,GL_FALSE,(const GLfloat *)&ModelMatrix[0]);
+    glUniformMatrix4fv(ModelMatrixLocation,1,GL_FALSE,(const GLfloat *)&ModelMatrixSun[0]);
     glUniformMatrix4fv(ViewMatrixLocation,1,GL_FALSE,(const GLfloat *)&ViewMatrix[0]);
     glUniformMatrix4fv(ProjectionMatrixLocation,1,GL_FALSE,(const GLfloat *)&ProjectionMatrix[0]);
 
@@ -212,18 +216,52 @@ void draw () {
     // Index buffer
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffer);
 
-    glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix[0]);
+    //glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix[0]);
 
     // Draw the triangles !
     glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
 
-    // Afficher une seconde chaise
+    // Terre
+    glm::mat4 ModelMatrixEarth = glm::mat4(1.0f);
+    float earthSunSpeed = 5.0f;
+    float earthEarthSpeed = 50.0f;
+    angleEarthSun += earthSunSpeed * deltaTime;
+    angleEarthEarth += earthEarthSpeed * deltaTime;
+    angleEarthSun = fmod(angleEarthSun,360.0f);
+    angleEarthEarth = fmod(angleEarthEarth,360.0f);
+    glm::vec3 axeInitial = glm::vec3(0.0f,1.0f,0.0f);
+    glm::mat4 tiltAxe = glm::rotate(glm::mat4(1.0f),23.0f,glm::vec3(0.0f,0.0f,1.0f));
+    glm::vec4 axeTilted4 = tiltAxe * glm::vec4(axeInitial,0.0f);
+    glm::vec3 axeTilted = glm::vec3(axeTilted4); // Tentative d'appliquer une rotation de 23 degrés à l'axe Y autour de l'axe Z
+    ModelMatrixEarth = glm::rotate(ModelMatrixEarth, glm::radians(angleEarthSun), glm::vec3(0.0, 1.0, 0.0)); // Rotation autour du Soleil
+    ModelMatrixEarth = glm::translate(ModelMatrixEarth, glm::vec3(1.0f, 0.0f, 0.0f)); // Translation pour l'orbite
+    ModelMatrixEarth = glm::rotate(ModelMatrixEarth, glm::radians(angleEarthEarth), axeTilted);
+    ModelMatrixEarth = glm::scale(ModelMatrixEarth,glm::vec3(0.15f,0.15f,0.15f));
+
+    glUniformMatrix4fv(ModelMatrixLocation,1,GL_FALSE,(const GLfloat *)&ModelMatrixEarth[0]);
+
+    glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
+
+    // Lune
+    float moonOrbitSpeed = 10.0f;
+    angleMoonEarth += moonOrbitSpeed * deltaTime;
+    angleMoonEarth = fmod(angleMoonEarth,360.0f);
+    glm::mat4 ModelMatrixMoon = ModelMatrixEarth;
+    ModelMatrixMoon = glm::translate(ModelMatrixMoon,glm::vec3(1.0f,1.0f,0.0f));
+    ModelMatrixMoon = glm::rotate(ModelMatrixMoon,glm::radians(angleMoonEarth),glm::vec3(0.0f,1.0f,0.0f));
+    ModelMatrixMoon = glm::scale(ModelMatrixMoon,glm::vec3(0.25f,0.25f,0.25f));
+
+    glUniformMatrix4fv(ModelMatrixLocation,1,GL_FALSE,(const GLfloat *)&ModelMatrixMoon[0]);
+
+    glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
+
+    // // Afficher une seconde chaise
 
     // glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix2[0]);
 
     // glDrawElements(GL_TRIANGLES,indices.size(),GL_UNSIGNED_SHORT,(void*)0);
 
-    // Afficher une troisieme chaise!
+    // //Afficher une troisieme chaise!
 
     // glUniformMatrix4fv(transformationMatrixID, 1, GL_FALSE, (const GLfloat*)&TransformationMatrix3[0]);
 
@@ -275,7 +313,6 @@ void key (unsigned char keyPressed, int x, int y) {
         TransformationMatrix = glm::mat4(1.0f);
         TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
         TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
         break;
     
     case '-':
@@ -284,7 +321,6 @@ void key (unsigned char keyPressed, int x, int y) {
             TransformationMatrix = glm::mat4(1.0f);
             TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
             TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
-            glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
         }
         break;
 
@@ -293,7 +329,6 @@ void key (unsigned char keyPressed, int x, int y) {
         TransformationMatrix = glm::mat4(1.0f);
         TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
         TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
         break;
 
     case 'q':
@@ -301,7 +336,6 @@ void key (unsigned char keyPressed, int x, int y) {
         TransformationMatrix = glm::mat4(1.0f);
         TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
         TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
         break;
 
     case 'z':
@@ -309,7 +343,6 @@ void key (unsigned char keyPressed, int x, int y) {
         TransformationMatrix = glm::mat4(1.0f);
         TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
         TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
         break;
 
     case 's':
@@ -317,7 +350,6 @@ void key (unsigned char keyPressed, int x, int y) {
         TransformationMatrix = glm::mat4(1.0f);
         TransformationMatrix = glm::translate(TransformationMatrix, translationTransformation);
         TransformationMatrix = glm::scale(TransformationMatrix, scaleTransformation);
-        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix[0]);
         break;
 
     case '3': {
@@ -325,24 +357,21 @@ void key (unsigned char keyPressed, int x, int y) {
         glm::mat4 rot = glm::rotate(glm::mat4(1.0f),glm::radians(radiansChaise3),glm::vec3(0.0f,0.0f,1.0f));
         glm::mat4 trans2 = glm::translate(glm::mat4(1.0f),glm::vec3(0.0f,0.5f,0.0f));
         TransformationMatrix3 = (trans2 * rot) * trans1;
-        glUniformMatrix4fv(transformationMatrixID,1,GL_FALSE,(const GLfloat *)&TransformationMatrix3[0]);
         radiansChaise3 += 10.0f;
         break;
     }
 
-    case 'r':
-        TransformationMatrix = glm::rotate(glm::mat4(1.0f),glm::radians(radiansSuzanne),glm::vec3(1.0f,1.0f,1.0f)); // Rotations selon les trois axes
+    case 'r': // Pour faire une rotation 3D de Suzanne (sans modèle MVP)
+        TransformationMatrix = glm::rotate(glm::mat4(1.0f),glm::radians(radiansSuzanne),glm::vec3(1.0f,1.0f,1.0f)); // Rotation selon les trois axes
         radiansSuzanne+=10.0f;
         break;
 
-    case 'l': {
-        glm::vec3 axeObjet = glm::vec3(0.0f,0.1f,0.0f);
-        glm::vec3 vecteurCible = glm::vec3(1.0f,1.0f,1.0f);
-        glm::vec3 axeRotation = glm::cross(axeObjet,vecteurCible); // Axe de la rotation
-        float angle = glm::acos(glm::dot(axeObjet,vecteurCible)); // Angle de la rotation
-        glm::mat4 rotationMatrix = glm::rotate(glm::mat4(1.0f),angle,axeRotation);
-        TransformationMatrix = rotationMatrix * TransformationMatrix;
+    case 'l': { // Pour aligner l'objet sur le vecteur (1,1,1) (sans modèle MVP)
+        glm::mat4 ViewMatrixObjet = glm::lookAt(glm::vec3(0.0f),glm::vec3(1.0f,1.0f,1.0f),glm::vec3(0.0f,0.1f,0.0f));
+        TransformationMatrix = ViewMatrixObjet * TransformationMatrix;
     }
+
+    // Pour bouger la caméra haut bas gauche droite avec modèle MVP
 
     case 'u':
         camera_position += glm::vec3(0.0f,cameraSpeed,0.0f);
@@ -476,13 +505,13 @@ int main (int argc, char ** argv) {
     programID = LoadShaders( "vertex_shader.glsl", "fragment_shader.glsl" );
 
     //Chargement du fichier de maillage
-    std::string filename("data/suzanne.off");
-    loadOFF(filename, indexed_vertices, indices, triangles );
+    std::string filename("data/sphere.off");
+    loadOFF(filename, indexed_vertices, indices, triangles);
 
     transformationMatrixID = glGetUniformLocation(programID,"TransformationMatrix");
     TransformationMatrix = glm::mat4(1.0f);
-    //TransformationMatrix = glm::translate(glm::mat4(1.0f),glm::vec3(-0.5f,-1.0f,0)) * glm::scale(glm::mat4(1.0f),glm::vec3(0.5f,0.5f,0.5f));
-    //TransformationMatrix2 = glm::translate(glm::mat4(1.0f),glm::vec3(0.5f,-1.0f,0)) * glm::scale(glm::mat4(1.0f),glm::vec3(-0.5f,0.5f,0.5f));
+    // TransformationMatrix = glm::translate(glm::mat4(1.0f),glm::vec3(-0.5f,-1.0f,0.0f)) * glm::scale(glm::mat4(1.0f),glm::vec3(0.5f,0.5f,0.5f));
+    // TransformationMatrix2 = glm::translate(glm::mat4(1.0f),glm::vec3(0.5f,-1.0f,0.0f)) * glm::scale(glm::mat4(1.0f),glm::vec3(-0.5f,0.5f,0.5f));
 
     // Load it into a VBO
 
