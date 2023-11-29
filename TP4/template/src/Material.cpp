@@ -1,7 +1,7 @@
 // Local includes
-#include "Material.h"
-#include "Shader.h"
-#include "Texture.h"
+#include "../include/Material.h"
+#include "../include/Shader.h"
+#include "../include/Texture.h"
 // GLM includes
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -40,14 +40,15 @@ void Material::internalBind() {
 	// bind parameters
 	GLint color = getUniform("color");
 	glUniform4fv(color, 1, glm::value_ptr(m_color));
-	if (m_texture != -1) {
-		glActiveTexture(0);
-		glBindTexture(GL_TEXTURE_2D, m_texture);
-		glUniform1i(getUniform("colorTexture"), 0);
-	}
-
+	glActiveTexture(0);
+	glBindTexture(GL_TEXTURE_2D, m_texture);
+	glUniform1i(getUniform("colorTexture"), 0);
+	glActiveTexture(1);
+	glBindTexture(GL_TEXTURE_2D, m_bump_map_texture);
+	glUniform1i(getUniform("bumpTexture"),1);
 	// TODO : Add your custom parameters here
 }
+	
 
 void Material::setMatrices(glm::mat4& projectionMatrix, glm::mat4& viewMatrix, glm::mat4& modelMatrix)
 {

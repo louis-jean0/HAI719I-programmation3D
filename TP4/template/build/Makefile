@@ -60,10 +60,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/e20190010736/prog-3D-2023/template
+CMAKE_SOURCE_DIR = /home/louis/Documents/HAI719I-programmation3D/TP4/template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/e20190010736/prog-3D-2023/template/build
+CMAKE_BINARY_DIR = /home/louis/Documents/HAI719I-programmation3D/TP4/template/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -90,7 +90,7 @@ rebuild_cache/fast: rebuild_cache
 
 # Special rule for the target list_install_components
 list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"assimp-dev\" \"libassimp5.2.5\" \"libassimp5.2.5-dev\""
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\" \"assimp-dev\" \"libassimp5.2.5\" \"libassimp5.2.5-dev\""
 .PHONY : list_install_components
 
 # Special rule for the target list_install_components
@@ -135,9 +135,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/e20190010736/prog-3D-2023/template/build/CMakeFiles /home/e20190010736/prog-3D-2023/template/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/CMakeFiles /home/louis/Documents/HAI719I-programmation3D/TP4/template/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/e20190010736/prog-3D-2023/template/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -202,6 +202,19 @@ uninstall: cmake_check_build_system
 uninstall/fast:
 	$(MAKE) $(MAKESILENT) -f thirdparties/assimp/CMakeFiles/uninstall.dir/build.make thirdparties/assimp/CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
+
+#=============================================================================
+# Target rules for targets named zlibstatic
+
+# Build rule for target.
+zlibstatic: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 zlibstatic
+.PHONY : zlibstatic
+
+# fast build rule for target.
+zlibstatic/fast:
+	$(MAKE) $(MAKESILENT) -f thirdparties/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/build.make thirdparties/assimp/contrib/zlib/CMakeFiles/zlibstatic.dir/build
+.PHONY : zlibstatic/fast
 
 #=============================================================================
 # Target rules for targets named assimp
@@ -287,6 +300,30 @@ src/Keyboard.s: src/Keyboard.cpp.s
 src/Keyboard.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/src/Keyboard.cpp.s
 .PHONY : src/Keyboard.cpp.s
+
+src/Light.o: src/Light.cpp.o
+.PHONY : src/Light.o
+
+# target to build an object file
+src/Light.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/src/Light.cpp.o
+.PHONY : src/Light.cpp.o
+
+src/Light.i: src/Light.cpp.i
+.PHONY : src/Light.i
+
+# target to preprocess a source file
+src/Light.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/src/Light.cpp.i
+.PHONY : src/Light.cpp.i
+
+src/Light.s: src/Light.cpp.s
+.PHONY : src/Light.s
+
+# target to generate assembly for a file
+src/Light.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tp.dir/build.make CMakeFiles/tp.dir/src/Light.cpp.s
+.PHONY : src/Light.cpp.s
 
 src/Material.o: src/Material.cpp.o
 .PHONY : src/Material.o
@@ -520,6 +557,7 @@ help:
 	@echo "... assimp"
 	@echo "... glm_shared"
 	@echo "... tp"
+	@echo "... zlibstatic"
 	@echo "... src/Camera.o"
 	@echo "... src/Camera.i"
 	@echo "... src/Camera.s"
@@ -529,6 +567,9 @@ help:
 	@echo "... src/Keyboard.o"
 	@echo "... src/Keyboard.i"
 	@echo "... src/Keyboard.s"
+	@echo "... src/Light.o"
+	@echo "... src/Light.i"
+	@echo "... src/Light.s"
 	@echo "... src/Material.o"
 	@echo "... src/Material.i"
 	@echo "... src/Material.s"

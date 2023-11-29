@@ -14,6 +14,7 @@ struct Mesh {
 	GLuint positionsBuffer;
 	GLuint normalsBuffer;
 	GLuint tangentsBuffer;
+	GLuint bitangentsBuffer;
 	GLuint uv0Buffer;
 	// elementBuffer
 	GLuint elementsBuffer;

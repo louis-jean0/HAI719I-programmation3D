@@ -18,14 +18,14 @@
 #include <glm/gtc/type_ptr.hpp>
 #include <glm/gtx/string_cast.hpp>
 // Local includes
-#include "Camera.h"
-#include "Shader.h"
-#include "Material.h"
-#include "Context.h"
-#include "Mouse.h"
-#include "Keyboard.h"
-#include "SceneLoader.h"
-#include "Texture.h"
+#include "../include/Camera.h"
+#include "../include/Shader.h"
+#include "../include/Material.h"
+#include "../include/Context.h"
+#include "../include/Mouse.h"
+#include "../include/Keyboard.h"
+#include "../include/SceneLoader.h"
+#include "../include/Texture.h"
 
 
 
@@ -36,9 +36,25 @@
 
 static GLint window;
 
+void initLight () {
+    GLfloat light_position1[4] = {22.0f, 16.0f, 50.0f, 0.0f};
+    GLfloat direction1[3] = {-52.0f,-16.0f,-50.0f};
+    GLfloat color1[4] = {1.0f, 1.0f, 1.0f, 1.0f};
+    GLfloat ambient[4] = {0.3f, 0.3f, 0.3f, 0.5f};
+
+    glLightfv (GL_LIGHT1, GL_POSITION, light_position1);
+    glLightfv (GL_LIGHT1, GL_SPOT_DIRECTION, direction1);
+    glLightfv (GL_LIGHT1, GL_DIFFUSE, color1);
+    glLightfv (GL_LIGHT1, GL_SPECULAR, color1);
+    glLightModelfv (GL_LIGHT_MODEL_AMBIENT, ambient);
+    glEnable (GL_LIGHT1);
+    glEnable (GL_LIGHTING);
+}
+
 void init() {
 	// Context::camera.initPos();
 	Context::camera.resize(SCREENWIDTH, SCREENHEIGHT);
+	initLight();
 	glCullFace (GL_BACK);
 	glEnable (GL_CULL_FACE);
 	glDepthFunc (GL_LESS);

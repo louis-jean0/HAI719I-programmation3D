@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = -Dglm_shared_EXPORTS
 
-CXX_INCLUDES = -I/home/e20190010736/prog-3D-2023/template/thirdparties/glm/glm/..
+CXX_INCLUDES = -I/home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/glm/glm/..
 
 CXX_FLAGS = -fPIC
 

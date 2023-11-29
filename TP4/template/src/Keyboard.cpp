@@ -1,5 +1,5 @@
-#include "Keyboard.h"
-#include "Context.h"
+#include "../include/Keyboard.h"
+#include "../include/Context.h"
 // GLUT includes
 #include <GL/glut.h>
 

@@ -7,7 +7,7 @@
 // All rights reserved.
 // **************************************************
 
-#include "Camera.h"
+#include "../include/Camera.h"
 #include <GL/glew.h>
 #include <GL/glut.h>
 #include <iostream>

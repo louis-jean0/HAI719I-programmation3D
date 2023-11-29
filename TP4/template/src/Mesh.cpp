@@ -1,10 +1,10 @@
-#include "Mesh.h"
+#include "../include/Mesh.h"
 // OPENGL includes
 #include <GL/glew.h>
 #include <GL/glut.h>
 
 Mesh::Mesh(): mNumVertices(0), mNumFaces(0), positionsBuffer(0),
-normalsBuffer(0), tangentsBuffer(0), uv0Buffer(0), elementsBuffer(0) {
+normalsBuffer(0), tangentsBuffer(0), bitangentsBuffer(0), uv0Buffer(0), elementsBuffer(0) {
 
 }
 
@@ -23,8 +23,11 @@ void Mesh::draw() {
 	glBindBuffer(GL_ARRAY_BUFFER, tangentsBuffer);
 	glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
 	glEnableVertexAttribArray(3);
+	glBindBuffer(GL_ARRAY_BUFFER, bitangentsBuffer);
+	glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);
+	glEnableVertexAttribArray(4);
 	glBindBuffer(GL_ARRAY_BUFFER, uv0Buffer);
-	glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);// 3 because assimp 
+	glVertexAttribPointer(4, 3, GL_FLOAT, GL_FALSE, 3*sizeof(float), (void*)0);// 3 because assimp 
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementsBuffer);
 	glDrawElements(GL_TRIANGLES, 3 * mNumFaces, GL_UNSIGNED_INT, (void*)0);
 }
@@ -38,6 +41,9 @@ void Mesh::clear() {
 	}
 	if (tangentsBuffer != 0) {
 		glDeleteBuffers(1, &tangentsBuffer);
+	}
+	if (bitangentsBuffer != 0) {
+		glDeleteBuffers(1, &bitangentsBuffer);
 	}
 	if (uv0Buffer != 0) {
 		glDeleteBuffers(1, &uv0Buffer);

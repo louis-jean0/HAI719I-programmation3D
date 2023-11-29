@@ -7,6 +7,7 @@
 
 #include <string>
 #include <stdexcept>
+#include <vector>
 
 struct Material {
 	// Shader program
@@ -15,6 +16,7 @@ struct Material {
 	// Material parameters
 	glm::vec4 m_color;
 	GLint m_texture;
+	GLint m_bump_map_texture;
 
 	inline void check() {
 		if (m_program == 0) {

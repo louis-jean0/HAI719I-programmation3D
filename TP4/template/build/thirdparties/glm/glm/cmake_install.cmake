@@ -1,4 +1,4 @@
-# Install script for directory: /home/e20190010736/prog-3D-2023/template/thirdparties/glm/glm
+# Install script for directory: /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/glm/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

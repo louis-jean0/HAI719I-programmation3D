@@ -1,4 +1,4 @@
-#include "Context.h"
+#include "../include/Context.h"
 // GLUT includes
 #include <GL/glut.h>
 

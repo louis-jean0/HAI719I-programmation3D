@@ -1,8 +1,8 @@
-IF(NOT EXISTS "/home/e20190010736/prog-3D-2023/template/build/thirdparties/assimp/install_manifest.txt")
-  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/home/e20190010736/prog-3D-2023/template/build/thirdparties/assimp/install_manifest.txt\"")
-ENDIF(NOT EXISTS "/home/e20190010736/prog-3D-2023/template/build/thirdparties/assimp/install_manifest.txt")
+IF(NOT EXISTS "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/install_manifest.txt")
+  MESSAGE(FATAL_ERROR "Cannot find install manifest: \"/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/install_manifest.txt\"")
+ENDIF(NOT EXISTS "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/install_manifest.txt")
 
-FILE(READ "/home/e20190010736/prog-3D-2023/template/build/thirdparties/assimp/install_manifest.txt" files)
+FILE(READ "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/install_manifest.txt" files)
 STRING(REGEX REPLACE "\n" ";" files "${files}")
 FOREACH(file ${files})
   MESSAGE(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")

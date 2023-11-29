@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/tp.dir/src/Context.cpp.o.d"
   "CMakeFiles/tp.dir/src/Keyboard.cpp.o"
   "CMakeFiles/tp.dir/src/Keyboard.cpp.o.d"
+  "CMakeFiles/tp.dir/src/Light.cpp.o"
+  "CMakeFiles/tp.dir/src/Light.cpp.o.d"
   "CMakeFiles/tp.dir/src/Material.cpp.o"
   "CMakeFiles/tp.dir/src/Material.cpp.o.d"
   "CMakeFiles/tp.dir/src/Mesh.cpp.o"

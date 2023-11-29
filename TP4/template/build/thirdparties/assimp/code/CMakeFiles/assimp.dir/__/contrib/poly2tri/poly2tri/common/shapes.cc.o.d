@@ -1,7 +1,7 @@
 thirdparties/assimp/code/CMakeFiles/assimp.dir/__/contrib/poly2tri/poly2tri/common/shapes.cc.o: \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/contrib/poly2tri/poly2tri/common/shapes.cc \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/contrib/poly2tri/poly2tri/common/shapes.cc \
  /usr/include/stdc-predef.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/contrib/poly2tri/poly2tri/common/shapes.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/contrib/poly2tri/poly2tri/common/shapes.h \
  /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \

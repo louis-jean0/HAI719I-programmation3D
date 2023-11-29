@@ -1,6 +1,6 @@
-#include "SceneLoader.h"
-#include "Context.h"
-#include "Material.h"
+#include "../include/SceneLoader.h"
+#include "../include/Context.h"
+#include "../include/Material.h"
 // ASSIMP includes
 #include <assimp/Importer.hpp>      // C++ importer interface
 #include <assimp/scene.h>           // Output data structure
@@ -49,6 +49,10 @@ Mesh* createMesh(aiMesh* mesh) {
 	glBindBuffer(GL_ARRAY_BUFFER, glMesh->tangentsBuffer);
 	std::cerr << "tangents:" << (mesh->mTangents!=nullptr) << std::endl;
 	glBufferData(GL_ARRAY_BUFFER, mesh->mNumVertices * sizeof(aiVector3D), mesh->mTangents, GL_STATIC_DRAW);
+	glGenBuffers(1, &glMesh->bitangentsBuffer);
+	glBindBuffer(GL_ARRAY_BUFFER,glMesh->bitangentsBuffer);
+	std::cerr << "bitangents:" << (mesh->mBitangents!=nullptr) << std::endl;
+	glBufferData(GL_ARRAY_BUFFER, mesh->mNumVertices * sizeof(aiVector3D), mesh->mTangents, GL_STATIC_DRAW);
 	if (mesh->HasTextureCoords(0)) {
 		glGenBuffers(1, &glMesh->uv0Buffer);
 		glBindBuffer(GL_ARRAY_BUFFER, glMesh->uv0Buffer);
@@ -72,6 +76,8 @@ Mesh* createMesh(aiMesh* mesh) {
 
 Material* createMaterial(aiMaterial* material) {
 	// TODO: implement recovery of your scene's material into your material schema
+	//Material* glMaterial = new Material();
+	
 	return new Material();
 }
 

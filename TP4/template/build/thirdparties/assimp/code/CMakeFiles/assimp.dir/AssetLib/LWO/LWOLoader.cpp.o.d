@@ -1,8 +1,8 @@
 thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/AssetLib/LWO/LWOLoader.cpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/AssetLib/LWO/LWOLoader.cpp \
  /usr/include/stdc-predef.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/AssetLib/LWO/LWOLoader.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/AssetLib/LWO/LWOFileData.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/AssetLib/LWO/LWOLoader.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/AssetLib/LWO/LWOFileData.h \
  /usr/include/c++/11/list /usr/include/c++/11/bits/stl_algobase.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -48,9 +48,9 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/c++/11/bits/functional_hash.h \
  /usr/include/c++/11/bits/hash_bytes.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/mesh.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/aabb.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/vector3.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/mesh.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/aabb.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/vector3.h \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/x86_64-linux-gnu/bits/types.h \
@@ -109,9 +109,9 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/c++/11/tr1/poly_hermite.tcc \
  /usr/include/c++/11/tr1/poly_laguerre.tcc \
  /usr/include/c++/11/tr1/riemann_zeta.tcc \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/defs.h \
- /home/e20190010736/prog-3D-2023/template/build/thirdparties/assimp/include/assimp/config.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/types.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/defs.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/include/assimp/config.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/types.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
  /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
  /usr/include/limits.h /usr/include/x86_64-linux-gnu/bits/posix1_lim.h \
@@ -125,11 +125,11 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h /usr/include/string.h \
  /usr/include/strings.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/vector2.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/color4.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/matrix3x3.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/matrix4x4.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/quaternion.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/vector2.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/color4.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/matrix3x3.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/matrix4x4.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/quaternion.h \
  /usr/include/c++/11/cstring /usr/include/c++/11/string \
  /usr/include/c++/11/bits/stringfwd.h \
  /usr/include/c++/11/bits/char_traits.h \
@@ -180,10 +180,10 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/error_t.h \
  /usr/include/c++/11/bits/charconv.h \
  /usr/include/c++/11/bits/basic_string.tcc \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/vector2.inl \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/vector3.inl \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/color4.inl \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/matrix3x3.inl \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/vector2.inl \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/vector3.inl \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/color4.inl \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/matrix3x3.inl \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/stl_algo.h \
@@ -203,19 +203,19 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/c++/11/bits/unordered_map.h \
  /usr/include/c++/11/bits/erase_if.h \
  /usr/include/c++/11/pstl/execution_defs.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/matrix4x4.inl \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/MathFunctions.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/quaternion.inl \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/AssetLib/LWO/LWOAnimation.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/Common/IFF.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/ByteSwapper.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/ai_assert.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/BaseImporter.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/Exceptional.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/DefaultIOStream.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/IOStream.hpp \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/importerdesc.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/TinyFormatter.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/matrix4x4.inl \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/MathFunctions.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/quaternion.inl \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/AssetLib/LWO/LWOAnimation.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/Common/IFF.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/ByteSwapper.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/ai_assert.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/BaseImporter.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/Exceptional.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/DefaultIOStream.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/IOStream.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/importerdesc.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/TinyFormatter.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/istream \
  /usr/include/c++/11/ios /usr/include/c++/11/exception \
  /usr/include/c++/11/bits/exception_ptr.h \
@@ -239,7 +239,7 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/c++/11/bits/ostream.tcc \
  /usr/include/c++/11/bits/istream.tcc \
  /usr/include/c++/11/bits/sstream.tcc \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/ProgressHandler.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/ProgressHandler.hpp \
  /usr/include/c++/11/set /usr/include/c++/11/bits/stl_tree.h \
  /usr/include/c++/11/bits/stl_set.h \
  /usr/include/c++/11/bits/stl_multiset.h /usr/include/c++/11/memory \
@@ -254,33 +254,33 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/c++/11/bits/atomic_lockfree_defines.h \
  /usr/include/c++/11/backward/auto_ptr.h \
  /usr/include/c++/11/pstl/glue_memory_defs.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/material.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/Compiler/pushpack1.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/Compiler/poppack1.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/material.inl \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/DefaultLogger.hpp \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/LogStream.hpp \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/Logger.hpp \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/NullLogger.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/material.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/Compiler/pushpack1.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/Compiler/poppack1.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/material.inl \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/DefaultLogger.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/LogStream.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/Logger.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/NullLogger.hpp \
  /usr/include/c++/11/map /usr/include/c++/11/bits/stl_map.h \
  /usr/include/c++/11/bits/stl_multimap.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/PostProcessing/ConvertToLHProcess.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/Common/BaseProcess.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/GenericProperty.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/Hash.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/PostProcessing/ConvertToLHProcess.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/Common/BaseProcess.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/GenericProperty.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/Hash.h \
  /usr/include/c++/11/stdlib.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/Importer.hpp \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/code/PostProcessing/ProcessHelper.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/anim.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/postprocess.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/scene.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/texture.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/light.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/camera.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/metadata.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/ParsingUtils.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/StringComparison.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/StringUtils.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/Importer.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/PostProcessing/ProcessHelper.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/anim.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/postprocess.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/scene.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/texture.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/light.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/camera.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/metadata.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/ParsingUtils.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/StringComparison.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/StringUtils.h \
  /usr/include/c++/11/cstdarg /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h /usr/include/c++/11/ctime \
  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
@@ -289,9 +289,9 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/LWO/LWOLoader.cpp.o: \
  /usr/include/c++/11/bits/locale_facets_nonio.tcc \
  /usr/include/c++/11/bits/locale_conv.h /usr/include/c++/11/iomanip \
  /usr/include/c++/11/bits/quoted_string.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/SpatialSort.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/SGSpatialSort.h \
- /home/e20190010736/prog-3D-2023/template/thirdparties/assimp/include/assimp/IOSystem.hpp \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/SpatialSort.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/SGSpatialSort.h \
+ /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/include/assimp/IOSystem.hpp \
  /usr/include/x86_64-linux-gnu/sys/stat.h \
  /usr/include/x86_64-linux-gnu/bits/stat.h \
  /usr/include/x86_64-linux-gnu/bits/struct_stat.h \

@@ -1,6 +1,6 @@
 // Local includes
-#include "Mouse.h"
-#include "Context.h"
+#include "../include/Mouse.h"
+#include "../include/Context.h"
 // GLUT includes
 #include <GL/glut.h>
 
