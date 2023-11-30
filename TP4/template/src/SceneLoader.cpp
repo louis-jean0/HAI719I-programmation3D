@@ -52,7 +52,7 @@ Mesh* createMesh(aiMesh* mesh) {
 	glGenBuffers(1, &glMesh->bitangentsBuffer);
 	glBindBuffer(GL_ARRAY_BUFFER,glMesh->bitangentsBuffer);
 	std::cerr << "bitangents:" << (mesh->mBitangents!=nullptr) << std::endl;
-	glBufferData(GL_ARRAY_BUFFER, mesh->mNumVertices * sizeof(aiVector3D), mesh->mTangents, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, mesh->mNumVertices * sizeof(aiVector3D), mesh->mBitangents, GL_STATIC_DRAW);
 	if (mesh->HasTextureCoords(0)) {
 		glGenBuffers(1, &glMesh->uv0Buffer);
 		glBindBuffer(GL_ARRAY_BUFFER, glMesh->uv0Buffer);

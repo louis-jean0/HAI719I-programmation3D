@@ -1,4 +1,4 @@
-# Install script for directory: /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp
+# Install script for directory: /home/e20190010736/HAI719I-programmation3D/TP4/template/thirdparties/assimp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibassimp5.2.5-devx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2" TYPE FILE FILES
-    "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/generated/assimpConfig.cmake"
-    "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/generated/assimpConfigVersion.cmake"
+    "/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/generated/assimpConfig.cmake"
+    "/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/generated/assimpConfigVersion.cmake"
     )
 endif()
 
@@ -53,7 +53,7 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibassimp5.2.5-devx" OR NOT CMAKE_I
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2/assimpTargets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
          "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2/assimpTargets.cmake"
-         "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/Export/lib/cmake/assimp-5.2/assimpTargets.cmake")
+         "/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/Export/lib/cmake/assimp-5.2/assimpTargets.cmake")
     if(EXPORT_FILE_CHANGED)
       file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2/assimpTargets-*.cmake")
       if(OLD_CONFIG_FILES)
@@ -62,20 +62,19 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibassimp5.2.5-devx" OR NOT CMAKE_I
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2" TYPE FILE FILES "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/Export/lib/cmake/assimp-5.2/assimpTargets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2" TYPE FILE FILES "/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/Export/lib/cmake/assimp-5.2/assimpTargets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2" TYPE FILE FILES "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/Export/lib/cmake/assimp-5.2/assimpTargets-noconfig.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/assimp-5.2" TYPE FILE FILES "/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/Export/lib/cmake/assimp-5.2/assimpTargets-noconfig.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xlibassimp5.2.5-devx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/assimp.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/assimp.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/contrib/zlib/cmake_install.cmake")
-  include("/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/code/cmake_install.cmake")
+  include("/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/code/cmake_install.cmake")
 
 endif()
 

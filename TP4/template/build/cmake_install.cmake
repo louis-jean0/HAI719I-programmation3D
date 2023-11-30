@@ -1,4 +1,4 @@
-# Install script for directory: /home/louis/Documents/HAI719I-programmation3D/TP4/template
+# Install script for directory: /home/e20190010736/HAI719I-programmation3D/TP4/template
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,8 +44,8 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/glm/cmake_install.cmake")
-  include("/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/cmake_install.cmake")
+  include("/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/glm/cmake_install.cmake")
+  include("/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/cmake_install.cmake")
 
 endif()
 
@@ -57,5 +57,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/e20190010736/HAI719I-programmation3D/TP4/template/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

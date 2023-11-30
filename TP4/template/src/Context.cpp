@@ -12,7 +12,6 @@ void reshape(int w, int h) {
     Context::refreshMatrices = true;
 }
 
-
 Camera Context::camera;
 std::vector<Instance> Context::instances;
 std::vector<Material*> Context::materials;

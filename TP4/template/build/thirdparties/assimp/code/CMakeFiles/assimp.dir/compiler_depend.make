@@ -5698,8 +5698,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Assbin/AssbinFileWriter.
   ../thirdparties/assimp/include/assimp/IOStream.hpp \
   ../thirdparties/assimp/include/assimp/importerdesc.h \
   ../thirdparties/assimp/include/assimp/version.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h
+  /usr/include/zlib.h \
+  /usr/include/zconf.h
 
 thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Assbin/AssbinLoader.cpp.o: ../thirdparties/assimp/code/AssetLib/Assbin/AssbinLoader.cpp \
   /usr/include/stdc-predef.h \
@@ -6034,8 +6034,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Assbin/AssbinLoader.cpp.
   ../thirdparties/assimp/include/assimp/material.h \
   ../thirdparties/assimp/include/assimp/material.inl \
   ../thirdparties/assimp/include/assimp/metadata.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h
+  /usr/include/zlib.h \
+  /usr/include/zconf.h
 
 thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Assjson/cencode.c.o: ../thirdparties/assimp/code/AssetLib/Assjson/cencode.c \
   /usr/include/stdc-predef.h \
@@ -7256,8 +7256,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Assxml/AssxmlFileWriter.
   ../thirdparties/assimp/include/assimp/Exporter.hpp \
   ../thirdparties/assimp/include/assimp/cexport.h \
   ../thirdparties/assimp/include/assimp/IOStream.hpp \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/include/c++/11/memory \
   /usr/include/c++/11/bits/stl_raw_storage_iter.h \
   /usr/include/c++/11/bits/align.h \
@@ -9349,8 +9349,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Blender/BlenderLoader.cp
   /usr/include/linux/close_range.h \
   ../thirdparties/assimp/include/assimp/StringComparison.h \
   ../thirdparties/assimp/code/Common/Compression.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/include/c++/11/cstddef
 
 thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Blender/BlenderModifier.cpp.o: ../thirdparties/assimp/code/AssetLib/Blender/BlenderModifier.cpp \
@@ -17833,8 +17833,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/FBX/FBXNodeAttribute.cpp
 thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/FBX/FBXParser.cpp.o: ../thirdparties/assimp/code/AssetLib/FBX/FBXParser.cpp \
   /usr/include/stdc-predef.h \
   ../thirdparties/assimp/code/Common/Compression.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -20758,8 +20758,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/IFC/IFCLoader.cpp.o: ../
   /usr/include/c++/11/pstl/glue_memory_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
   ../thirdparties/assimp/contrib/unzip/unzip.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -36720,8 +36720,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/Q3BSP/Q3BSPFileImporter.
   ../thirdparties/assimp/include/assimp/LogStream.hpp \
   ../thirdparties/assimp/include/assimp/Logger.hpp \
   ../thirdparties/assimp/include/assimp/NullLogger.hpp \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
@@ -42180,8 +42180,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/X/XFileParser.cpp.o: ../
   /usr/include/x86_64-linux-gnu/bits/sigthread.h \
   /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
   ../thirdparties/assimp/code/Common/Compression.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/include/c++/11/cstddef
 
 thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/X3D/X3DExporter.cpp.o: ../thirdparties/assimp/code/AssetLib/X3D/X3DExporter.cpp \
@@ -47179,8 +47179,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/AssetLib/XGL/XGLLoader.cpp.o: ../
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   ../thirdparties/assimp/code/Common/Compression.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/include/unistd.h \
   /usr/include/x86_64-linux-gnu/bits/posix_opt.h \
   /usr/include/x86_64-linux-gnu/bits/environments.h \
@@ -51670,8 +51670,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/Common/Bitmap.cpp.o: ../thirdpart
 thirdparties/assimp/code/CMakeFiles/assimp.dir/Common/Compression.cpp.o: ../thirdparties/assimp/code/Common/Compression.cpp \
   /usr/include/stdc-predef.h \
   ../thirdparties/assimp/code/Common/Compression.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/stddef.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
@@ -58419,8 +58419,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/Common/ZipArchiveIOSystem.cpp.o: 
   /usr/include/c++/11/bits/stl_map.h \
   /usr/include/c++/11/bits/stl_multimap.h \
   ../thirdparties/assimp/contrib/unzip/unzip.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   ../thirdparties/assimp/contrib/unzip/ioapi.h \
   /usr/include/c++/11/stdlib.h
 
@@ -72376,8 +72376,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/crypt.c.o: ../th
   /usr/include/x86_64-linux-gnu/bits/getopt_posix.h \
   /usr/include/x86_64-linux-gnu/bits/getopt_core.h \
   /usr/include/x86_64-linux-gnu/bits/unistd_ext.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -72459,8 +72459,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/ioapi.c.o: ../th
   /usr/include/stdint.h \
   /usr/include/x86_64-linux-gnu/bits/wchar.h \
   /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -72539,8 +72539,8 @@ thirdparties/assimp/code/CMakeFiles/assimp.dir/__/contrib/unzip/unzip.c.o: ../th
   /usr/include/x86_64-linux-gnu/asm/errno.h \
   /usr/include/asm-generic/errno.h \
   /usr/include/asm-generic/errno-base.h \
-  ../thirdparties/assimp/contrib/zlib/zlib.h \
-  thirdparties/assimp/contrib/zlib/zconf.h \
+  /usr/include/zlib.h \
+  /usr/include/zconf.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/limits.h \
   /usr/lib/gcc/x86_64-linux-gnu/11/include/syslimits.h \
   /usr/include/limits.h \
@@ -73499,8 +73499,6 @@ thirdparties/assimp/revision.h:
 
 ../thirdparties/assimp/code/AssetLib/ASE/ASELoader.cpp:
 
-thirdparties/assimp/contrib/zlib/zconf.h:
-
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clock_t.h:
@@ -73580,8 +73578,6 @@ thirdparties/assimp/contrib/zlib/zconf.h:
 /usr/include/c++/11/ext/numeric_traits.h:
 
 /usr/include/locale.h:
-
-../thirdparties/assimp/contrib/zlib/zlib.h:
 
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
@@ -74508,6 +74504,10 @@ thirdparties/assimp/include/assimp/config.h:
 ../thirdparties/assimp/code/AssetLib/Assbin/AssbinFileWriter.h:
 
 ../thirdparties/assimp/include/assimp/postprocess.h:
+
+/usr/include/zlib.h:
+
+/usr/include/zconf.h:
 
 ../thirdparties/assimp/code/PostProcessing/DeboneProcess.cpp:
 

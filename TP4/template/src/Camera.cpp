@@ -37,7 +37,6 @@ Camera::Camera () {
 	view = getViewMatrix();
 }
 
-
 void Camera::resize (int _W, int _H) {
 	H = _H;
 	W = _W;

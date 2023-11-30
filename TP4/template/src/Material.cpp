@@ -8,6 +8,7 @@
 // OPENGL includes
 #include <GL/glew.h>
 #include <GL/glut.h>
+#include <iostream>
 
 Material::~Material() {
 	if (m_program != 0) {
@@ -21,8 +22,10 @@ void Material::init() {
 	check();
 	// TODO : set initial parameters
 	m_color = {1.0, 1.0, 1.0, 1.0};
-	m_texture = loadTexture2DFromFilePath("./data/TwoSidedPlane_BaseColor.png");
+	m_texture = loadTexture2DFromFilePath("./data/BarramundiFish_baseColor.png");
+	m_normal_map_texture = loadTexture2DFromFilePath("./data/BarramundiFish_normal.png");
 	setDefaultTexture2DParameters(m_texture);
+	setDefaultTexture2DParameters(m_normal_map_texture);
 }
 
 void Material::clear() {
@@ -40,13 +43,24 @@ void Material::internalBind() {
 	// bind parameters
 	GLint color = getUniform("color");
 	glUniform4fv(color, 1, glm::value_ptr(m_color));
-	glActiveTexture(0);
+	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, m_texture);
 	glUniform1i(getUniform("colorTexture"), 0);
-	glActiveTexture(1);
-	glBindTexture(GL_TEXTURE_2D, m_bump_map_texture);
-	glUniform1i(getUniform("bumpTexture"),1);
+	glActiveTexture(GL_TEXTURE0 + 1);
+	glBindTexture(GL_TEXTURE_2D, m_normal_map_texture);
+	glUniform1i(getUniform("normalMapTexture"),1);
 	// TODO : Add your custom parameters here
+	// Gestion de la caméra
+	glm::vec3 camPos = glm::vec3(1,0,0); 
+	GLint camPosLoc = getUniform("camPos");
+	glUniform3fv(camPosLoc,1,glm::value_ptr(camPos));
+	// Gestion de la lumière
+	glm::vec3 light_position = glm::vec3(1.0f, 1.0f, 0.0f);
+	glm::vec3 light_color = glm::vec3(1.0f,1.0f,1.0f);
+	GLint lightPosLoc = getUniform("lightPosition");
+	GLint lightColorLoc = getUniform("lightColor");
+	glUniform3fv(lightPosLoc,1,glm::value_ptr(light_position));
+	glUniform3fv(lightColorLoc,1,glm::value_ptr(light_color));
 }
 	
 
