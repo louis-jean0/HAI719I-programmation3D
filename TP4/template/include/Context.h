@@ -13,6 +13,12 @@
 static unsigned int SCREENWIDTH = 1600;
 static unsigned int SCREENHEIGHT = 900;
 
+enum RenderingType {
+  Unlit,
+  Phong,
+  PBR
+};
+
 struct Instance {
   glm::mat4 matrix;
   Mesh* mesh;
@@ -27,6 +33,7 @@ struct Context {
   static std::vector<Instance> instances;
   static std::vector<Mesh*> meshes;
   static std::vector<Material*> materials;
+  static RenderingType rendering_type;
   // std::vector<Texture*> textures;
 };
 

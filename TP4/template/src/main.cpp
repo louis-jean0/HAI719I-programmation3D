@@ -95,8 +95,9 @@ void display() {
 }
 
 int main (int argc, char ** argv) {
-	if (argc < 2) {
-		std::cerr << "Missing parameter: <path-to-model> <path-to-texture>" << std::endl;
+	if (argc != 4) {
+		std::cout<<argc<<std::endl;
+		std::cerr << "Missing parameter: <path-to-model> <path-to-texture> <path-to-normal-map-texture>" << std::endl;
 		exit (EXIT_FAILURE);
 	}
 	glutInit(&argc, argv);
@@ -113,9 +114,13 @@ int main (int argc, char ** argv) {
 	glutMouseFunc(mouse);
 	key('?', 0, 0);
 
-	std::string path(argv[1]);
-	loadDataWithAssimp(path);
+	std::string model_path(argv[1]);
+	loadDataWithAssimp(model_path);
 	beforeLoop();
+	std::string texture_path(argv[2]);
+	std::string normal_map_texture_path(argv[3]);
+	Context::materials[0]->m_texture = loadTexture2DFromFilePath(texture_path);
+	Context::materials[0]->m_normal_map_texture = loadTexture2DFromFilePath(normal_map_texture_path);
 	// Dark blue background
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 	glutMainLoop();

@@ -2,6 +2,7 @@
 #include "../include/Material.h"
 #include "../include/Shader.h"
 #include "../include/Texture.h"
+#include "../include/Context.h"
 // GLM includes
 #include <glm/glm.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -18,12 +19,26 @@ Material::~Material() {
 
 void Material::init() {
 	// TODO : Change shader by your
+	switch (Context::rendering_type) {
+
+		case Unlit:
+			m_program = load_shaders("shaders/unlit/unlit_vertex.glsl", "shaders/unlit/unlit_fragment.glsl");
+		break;
+
+		case Phong:
+			m_program = load_shaders("shaders/phong/phong_vertex.glsl", "shaders/phong/phong_fragment.glsl");
+		break;
+
+		case PBR:
+		break;
+	
+	}
 	m_program = load_shaders("shaders/unlit/vertex.glsl", "shaders/unlit/fragment.glsl");
 	check();
 	// TODO : set initial parameters
 	m_color = {1.0, 1.0, 1.0, 1.0};
-	m_texture = loadTexture2DFromFilePath("./data/BarramundiFish_baseColor.png");
-	m_normal_map_texture = loadTexture2DFromFilePath("./data/BarramundiFish_normal.png");
+	m_texture = -1;//loadTexture2DFromFilePath("./data/BarramundiFish_baseColor.png");
+	m_normal_map_texture = -1; //loadTexture2DFromFilePath("./data/BarramundiFish_normal.png");
 	setDefaultTexture2DParameters(m_texture);
 	setDefaultTexture2DParameters(m_normal_map_texture);
 }
