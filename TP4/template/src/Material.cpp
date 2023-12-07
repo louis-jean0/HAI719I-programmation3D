@@ -19,26 +19,29 @@ Material::~Material() {
 
 void Material::init() {
 	// TODO : Change shader by your
-	switch (Context::rendering_type) {
+	switch(Context::rendering_type) {
 
 		case Unlit:
-			m_program = load_shaders("shaders/unlit/unlit_vertex.glsl", "shaders/unlit/unlit_fragment.glsl");
+			m_program = load_shaders("./shaders/unlit/unlit_vertex.glsl", "./shaders/unlit/unlit_fragment.glsl");
 		break;
 
 		case Phong:
-			m_program = load_shaders("shaders/phong/phong_vertex.glsl", "shaders/phong/phong_fragment.glsl");
+			m_program = load_shaders("./shaders/phong/phong_vertex.glsl", "./shaders/phong/phong_fragment.glsl");
+		break;
+
+		case Reflective:
+			m_program = load_shaders("./shaders/reflective/reflective_vertex.glsl", "./shaders/reflective/reflective_fragment.glsl");
 		break;
 
 		case PBR:
 		break;
 	
 	}
-	m_program = load_shaders("shaders/unlit/vertex.glsl", "shaders/unlit/fragment.glsl");
 	check();
 	// TODO : set initial parameters
 	m_color = {1.0, 1.0, 1.0, 1.0};
-	m_texture = -1;//loadTexture2DFromFilePath("./data/BarramundiFish_baseColor.png");
-	m_normal_map_texture = -1; //loadTexture2DFromFilePath("./data/BarramundiFish_normal.png");
+	m_texture = -1;
+	m_normal_map_texture = -1;
 	setDefaultTexture2DParameters(m_texture);
 	setDefaultTexture2DParameters(m_normal_map_texture);
 }
@@ -58,24 +61,50 @@ void Material::internalBind() {
 	// bind parameters
 	GLint color = getUniform("color");
 	glUniform4fv(color, 1, glm::value_ptr(m_color));
-	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, m_texture);
-	glUniform1i(getUniform("colorTexture"), 0);
-	glActiveTexture(GL_TEXTURE0 + 1);
-	glBindTexture(GL_TEXTURE_2D, m_normal_map_texture);
-	glUniform1i(getUniform("normalMapTexture"),1);
+	if(m_texture != - 1) {
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_2D, m_texture);
+		glUniform1i(getUniform("colorTexture"), 0);
+	}
+	if(m_normal_map_texture != -1) {
+		glActiveTexture(GL_TEXTURE0 + 1);
+		glBindTexture(GL_TEXTURE_2D, m_normal_map_texture);
+		glUniform1i(getUniform("normalMapTexture"),1);
+	}
+	switch(Context::rendering_type) {
+		case Unlit:
+		break;
+
+		case Phong: {
+			// Gestion de la caméra
+			glUniform3fv(getUniform("camPos"),1,glm::value_ptr(Context::camera.position));
+			// Gestion de la lumière
+			glm::vec3 light_position = glm::vec3(1.0f, 1.0f, 0.0f);
+			glm::vec3 light_color = glm::vec3(1.0f,1.0f,1.0f);
+			GLint lightPosLoc = getUniform("lightPosition");
+			GLint lightColorLoc = getUniform("lightColor");
+			glUniform3fv(lightPosLoc,1,glm::value_ptr(light_position));
+			glUniform3fv(lightColorLoc,1,glm::value_ptr(light_color));
+			// Les coefficients ambients, diffus et spéculaires sont à modifier directement dans le shader
+			// Idéalement, il faudrait les récupérer depuis les modèles ou bien pouvoir les modifier directement dans le programme C++
+		}
+		break;
+
+		case Reflective: {
+			glUniform3fv(getUniform("camPos"),1,glm::value_ptr(Context::camera.position));
+			glActiveTexture(GL_TEXTURE0);
+			glBindTexture(GL_TEXTURE_CUBE_MAP, Context::skyboxTexture);
+		}
+
+		case PBR:
+		break;
+
+		default:
+		break;
+
+	}
 	// TODO : Add your custom parameters here
-	// Gestion de la caméra
-	glm::vec3 camPos = glm::vec3(1,0,0); 
-	GLint camPosLoc = getUniform("camPos");
-	glUniform3fv(camPosLoc,1,glm::value_ptr(camPos));
-	// Gestion de la lumière
-	glm::vec3 light_position = glm::vec3(1.0f, 1.0f, 0.0f);
-	glm::vec3 light_color = glm::vec3(1.0f,1.0f,1.0f);
-	GLint lightPosLoc = getUniform("lightPosition");
-	GLint lightColorLoc = getUniform("lightColor");
-	glUniform3fv(lightPosLoc,1,glm::value_ptr(light_position));
-	glUniform3fv(lightColorLoc,1,glm::value_ptr(light_color));
+	
 }
 	
 

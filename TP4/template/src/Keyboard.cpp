@@ -25,7 +25,6 @@ void key (unsigned char keyPressed, int x, int y) {
 		glPolygonMode (GL_FRONT_AND_BACK, GL_LINE);
 		break;
 
-
 		case 'n': //Press n key to display normals
 		// display_normals = !display_normals;
 		break;
@@ -51,9 +50,9 @@ void key (unsigned char keyPressed, int x, int y) {
 		// translate[1] += 0.005;
 		break;
 
-		case 's': //Press s key to translate on y negative
-		// translate[1] -= 0.005;
-		break;
+		// case 's': //Press s key to translate on y negative
+		// // translate[1] -= 0.005;
+		// break;
 
 		case '1': //Toggle loaded mesh display
 		// display_loaded_mesh = !display_loaded_mesh;

@@ -33,6 +33,70 @@
 
 static GLint window;
 
+void initSkybox() {
+	Context::skyboxProgram = load_shaders("shaders/skybox/skybox_vertex.glsl","shaders/skybox/skybox_fragment.glsl");
+	std::vector<std::string> skyboxImages;
+	skyboxImages.push_back("data/skybox/right.jpg");
+	skyboxImages.push_back("data/skybox/left.jpg");
+	skyboxImages.push_back("data/skybox/top.jpg");
+	skyboxImages.push_back("data/skybox/bottom.jpg");
+	skyboxImages.push_back("data/skybox/front.jpg");
+	skyboxImages.push_back("data/skybox/back.jpg");
+	Context::skyboxTexture = loadSkybox(skyboxImages);
+
+	float skybox[] = {
+		-1.0f,  1.0f, -1.0f,
+		-1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+		1.0f,  1.0f, -1.0f,
+		-1.0f,  1.0f, -1.0f,
+
+		-1.0f, -1.0f,  1.0f,
+		-1.0f, -1.0f, -1.0f,
+		-1.0f,  1.0f, -1.0f,
+		-1.0f,  1.0f, -1.0f,
+		-1.0f,  1.0f,  1.0f,
+		-1.0f, -1.0f,  1.0f,
+
+		1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+
+		-1.0f, -1.0f,  1.0f,
+		-1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f, -1.0f,  1.0f,
+		-1.0f, -1.0f,  1.0f,
+
+		-1.0f,  1.0f, -1.0f,
+		1.0f,  1.0f, -1.0f,
+		1.0f,  1.0f,  1.0f,
+		1.0f,  1.0f,  1.0f,
+		-1.0f,  1.0f,  1.0f,
+		-1.0f,  1.0f, -1.0f,
+
+		-1.0f, -1.0f, -1.0f,
+		-1.0f, -1.0f,  1.0f,
+		1.0f, -1.0f, -1.0f,
+		1.0f, -1.0f, -1.0f,
+		-1.0f, -1.0f,  1.0f,
+		1.0f, -1.0f,  1.0f
+	};
+	glGenVertexArrays(1, &Context::skyboxVAO);
+	glGenBuffers(1, &Context::skyboxVBO);
+	glBindVertexArray(Context::skyboxVAO);
+	glBindBuffer(GL_ARRAY_BUFFER, Context::skyboxVBO);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(skybox), &skybox, GL_STATIC_DRAW);
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+	glBindVertexArray(0);
+}
+
 void init() {
 	// Context::camera.initPos();
 	Context::camera.resize(SCREENWIDTH, SCREENHEIGHT);
@@ -47,6 +111,7 @@ void init() {
 		fprintf(stderr, "Failed to initialize GLEW\n");
 		return;
 	}
+	initSkybox();
 }
 
 void beforeLoop() {
@@ -77,6 +142,21 @@ void draw() {
 	// Clear the screen
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	glDepthMask(GL_FALSE);
+	// bind skybox
+	glUseProgram(Context::skyboxProgram);
+	glUniformMatrix4fv(glGetUniformLocation(Context::skyboxProgram, "projectionMatrix"), 1, false, glm::value_ptr(Context::camera.getProjectionMatrix()));
+	glUniformMatrix4fv(glGetUniformLocation(Context::skyboxProgram, "viewMatrix"), 1, false, glm::value_ptr(glm::mat4(glm::mat3(Context::camera.getViewMatrix()))));
+
+	glBindVertexArray(Context::skyboxVAO);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, Context::skyboxProgram);
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_CUBE_MAP, Context::skyboxTexture);
+	glDrawArrays(GL_TRIANGLES, 0, 6*6);
+	glBindVertexArray(0);
+
+	glDepthMask(GL_TRUE);
+
 	for (int i = 0; i < Context::instances.size(); ++i) {
 		Instance& inst = Context::instances[i];
 		Material* material = inst.material;
@@ -93,6 +173,8 @@ void display() {
 	glFlush();
 	glutSwapBuffers();
 }
+
+
 
 int main (int argc, char ** argv) {
 	if (argc != 4) {
@@ -113,7 +195,7 @@ int main (int argc, char ** argv) {
 	glutMotionFunc(motion);
 	glutMouseFunc(mouse);
 	key('?', 0, 0);
-
+	Context::rendering_type = Reflective;
 	std::string model_path(argv[1]);
 	loadDataWithAssimp(model_path);
 	beforeLoop();

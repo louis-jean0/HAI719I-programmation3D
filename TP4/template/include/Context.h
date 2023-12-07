@@ -16,6 +16,7 @@ static unsigned int SCREENHEIGHT = 900;
 enum RenderingType {
   Unlit,
   Phong,
+  Reflective,
   PBR
 };
 
@@ -34,6 +35,13 @@ struct Context {
   static std::vector<Mesh*> meshes;
   static std::vector<Material*> materials;
   static RenderingType rendering_type;
+
+  static GLuint skyboxProgram;
+  static GLuint skyboxTexture;
+  static GLuint skyboxVAO;
+  static GLuint skyboxVBO;
+  static bool displaySkybox;
+
   // std::vector<Texture*> textures;
 };
 
