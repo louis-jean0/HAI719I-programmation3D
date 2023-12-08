@@ -12,5 +12,8 @@ void main() {
     vec3 incident = normalize(positionWorld - camPos);
     vec3 reflected = reflect(incident,normalWorld); // normalWorld déjà normalisé dans vertex
     FragColor = vec4(texture(skybox,reflected).rgb,1.0);
+    // DEBUG
+    //FragColor = vec4(normalWorld * 0.5 + 0.5,1.0);
+    //FragColor = vec4(positionWorld,1.0);
 }
 

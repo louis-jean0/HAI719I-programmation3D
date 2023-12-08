@@ -56,10 +56,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/e20190010736/HAI719I-programmation3D/TP4/template
+CMAKE_SOURCE_DIR = /home/louis/Documents/HAI719I-programmation3D/TP4/template
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/e20190010736/HAI719I-programmation3D/TP4/template/build
+CMAKE_BINARY_DIR = /home/louis/Documents/HAI719I-programmation3D/TP4/template/build
 
 # Utility rule file for uninstall.
 
@@ -70,7 +70,7 @@ include thirdparties/assimp/CMakeFiles/uninstall.dir/compiler_depend.make
 include thirdparties/assimp/CMakeFiles/uninstall.dir/progress.make
 
 thirdparties/assimp/CMakeFiles/uninstall:
-	cd /home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp && /usr/bin/cmake -P /home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/cmake_uninstall.cmake
+	cd /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp && /usr/bin/cmake -P /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/cmake_uninstall.cmake
 
 uninstall: thirdparties/assimp/CMakeFiles/uninstall
 uninstall: thirdparties/assimp/CMakeFiles/uninstall.dir/build.make
@@ -81,10 +81,10 @@ thirdparties/assimp/CMakeFiles/uninstall.dir/build: uninstall
 .PHONY : thirdparties/assimp/CMakeFiles/uninstall.dir/build
 
 thirdparties/assimp/CMakeFiles/uninstall.dir/clean:
-	cd /home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
+	cd /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp && $(CMAKE_COMMAND) -P CMakeFiles/uninstall.dir/cmake_clean.cmake
 .PHONY : thirdparties/assimp/CMakeFiles/uninstall.dir/clean
 
 thirdparties/assimp/CMakeFiles/uninstall.dir/depend:
-	cd /home/e20190010736/HAI719I-programmation3D/TP4/template/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/e20190010736/HAI719I-programmation3D/TP4/template /home/e20190010736/HAI719I-programmation3D/TP4/template/thirdparties/assimp /home/e20190010736/HAI719I-programmation3D/TP4/template/build /home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp /home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/louis/Documents/HAI719I-programmation3D/TP4/template/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/louis/Documents/HAI719I-programmation3D/TP4/template /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp /home/louis/Documents/HAI719I-programmation3D/TP4/template/build /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp /home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/CMakeFiles/uninstall.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : thirdparties/assimp/CMakeFiles/uninstall.dir/depend
 

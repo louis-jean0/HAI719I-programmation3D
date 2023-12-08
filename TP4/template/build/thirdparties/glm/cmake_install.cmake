@@ -1,4 +1,4 @@
-# Install script for directory: /home/e20190010736/HAI719I-programmation3D/TP4/template/thirdparties/glm
+# Install script for directory: /home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/glm
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,7 +44,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/glm/glm/cmake_install.cmake")
+  include("/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/glm/glm/cmake_install.cmake")
 
 endif()
 

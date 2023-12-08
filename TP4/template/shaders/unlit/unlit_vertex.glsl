@@ -17,8 +17,6 @@ out vec3 o_positionWorld;
 out vec3 o_normalWorld;
 out vec2 o_uv0;
 
-
-
 void main() {
   mat3 normalMatrix = mat3(transpose(inverse(model)));
   o_uv0 = uv0;
