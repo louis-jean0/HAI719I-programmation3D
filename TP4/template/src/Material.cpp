@@ -34,6 +34,7 @@ void Material::init() {
 		break;
 
 		case PBR:
+			m_program = load_shaders("./shaders/pbr/pbr_vertex.glsl", "./shaders/pbr/pbr_fragment.glsl");
 		break;
 	
 	}
@@ -42,8 +43,8 @@ void Material::init() {
 	m_color = {1.0, 1.0, 1.0, 1.0};
 	m_texture = -1;
 	m_normal_map_texture = -1;
-	setDefaultTexture2DParameters(m_texture);
-	setDefaultTexture2DParameters(m_normal_map_texture);
+	m_pbr_packed_texture = -1;
+	
 }
 
 void Material::clear() {
@@ -59,23 +60,35 @@ void Material::bind() {
 
 void Material::internalBind() {
 	// bind parameters
-	GLint color = getUniform("color");
-	glUniform4fv(color, 1, glm::value_ptr(m_color));
-	if(m_texture != - 1) {
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, m_texture);
-		glUniform1i(getUniform("colorTexture"), 0);
-	}
-	if(m_normal_map_texture != -1) {
-		glActiveTexture(GL_TEXTURE0 + 1);
-		glBindTexture(GL_TEXTURE_2D, m_normal_map_texture);
-		glUniform1i(getUniform("normalMapTexture"),1);
-	}
+	
 	switch(Context::rendering_type) {
-		case Unlit:
+		case Unlit: {
+			GLint color = getUniform("color");
+			glUniform4fv(color, 1, glm::value_ptr(m_color));
+			if(m_texture != - 1) {
+				glActiveTexture(GL_TEXTURE0);
+				glBindTexture(GL_TEXTURE_2D, m_texture);
+				glUniform1i(getUniform("colorTexture"), 0);
+			}
+			if(m_normal_map_texture != -1) {
+				glActiveTexture(GL_TEXTURE0 + 1);
+				glBindTexture(GL_TEXTURE_2D, m_normal_map_texture);
+				glUniform1i(getUniform("normalMapTexture"),1);
+			}
+		}
 		break;
 
 		case Phong: {
+			if(m_texture != - 1) {
+				glActiveTexture(GL_TEXTURE0);
+				glBindTexture(GL_TEXTURE_2D, m_texture);
+				glUniform1i(getUniform("colorTexture"), 0);
+			}
+			if(m_normal_map_texture != -1) {
+				glActiveTexture(GL_TEXTURE0 + 1);
+				glBindTexture(GL_TEXTURE_2D, m_normal_map_texture);
+				glUniform1i(getUniform("normalMapTexture"),1);
+			}
 			// Gestion de la caméra
 			glUniform3fv(getUniform("camPos"),1,glm::value_ptr(Context::camera.position));
 			// Gestion de la lumière
@@ -94,9 +107,36 @@ void Material::internalBind() {
 			glUniform3fv(getUniform("camPos"),1,glm::value_ptr(Context::camera.position));
 			glActiveTexture(GL_TEXTURE0);
 			glBindTexture(GL_TEXTURE_CUBE_MAP, Context::skyboxTexture);
+			glUniform1i(getUniform("skybox"),0);
 		}
 
-		case PBR:
+		case PBR: {
+			if(m_texture != - 1) {
+				glActiveTexture(GL_TEXTURE0);
+				glBindTexture(GL_TEXTURE_2D, m_texture);
+				glUniform1i(getUniform("colorTexture"), 0);
+			}
+			if(m_normal_map_texture != -1) {
+				glActiveTexture(GL_TEXTURE0 + 1);
+				glBindTexture(GL_TEXTURE_2D, m_normal_map_texture);
+				glUniform1i(getUniform("normalMapTexture"),1);
+			}
+			if(m_pbr_packed_texture != -1) {
+				glActiveTexture(GL_TEXTURE0 + 2);
+				glBindTexture(GL_TEXTURE_2D,m_pbr_packed_texture);
+				glUniform1i(getUniform("pbr_packed_texture"),2);
+			}
+			// Gestion de la caméra
+			glUniform3fv(getUniform("camPos"),1,glm::value_ptr(Context::camera.position));
+			// Gestion de la lumière
+			glm::vec3 light_position = glm::vec3(-1.0f, 1.0f, 0.0f);
+			glm::vec3 light_color = glm::vec3(1.0f,1.0f,1.0f);
+			GLint lightPosLoc = getUniform("lightPosition");
+			GLint lightColorLoc = getUniform("lightColor");
+			glUniform3fv(lightPosLoc,1,glm::value_ptr(light_position));
+			glUniform3fv(lightColorLoc,1,glm::value_ptr(light_color));
+			
+		}
 		break;
 
 		default:

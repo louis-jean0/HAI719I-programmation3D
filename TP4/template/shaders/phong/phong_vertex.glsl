@@ -14,7 +14,6 @@ out vec3 o_positionWorld;
 out vec3 o_normalWorld;
 out vec2 o_uv0;
 out mat3 TBN;
-out vec4 color;
 
 void main() {
 

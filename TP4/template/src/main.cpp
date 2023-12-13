@@ -143,18 +143,14 @@ void draw() {
 	glClear(GL_COLOR_BUFFER_BIT);
 
 	glDepthMask(GL_FALSE);
-	// bind skybox
 	glUseProgram(Context::skyboxProgram);
 	glUniformMatrix4fv(glGetUniformLocation(Context::skyboxProgram, "projectionMatrix"), 1, false, glm::value_ptr(Context::camera.getProjectionMatrix()));
 	glUniformMatrix4fv(glGetUniformLocation(Context::skyboxProgram, "viewMatrix"), 1, false, glm::value_ptr(glm::mat4(glm::mat3(Context::camera.getViewMatrix()))));
-
 	glBindVertexArray(Context::skyboxVAO);
-	glBindTexture(GL_TEXTURE_CUBE_MAP, Context::skyboxProgram);
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_CUBE_MAP, Context::skyboxTexture);
 	glDrawArrays(GL_TRIANGLES, 0, 6*6);
 	glBindVertexArray(0);
-
 	glDepthMask(GL_TRUE);
 
 	for (int i = 0; i < Context::instances.size(); ++i) {
@@ -177,9 +173,9 @@ void display() {
 
 
 int main (int argc, char ** argv) {
-	if (argc != 4) {
+	if (argc != 5) {
 		std::cout<<argc<<std::endl;
-		std::cerr << "Missing parameter: <path-to-model> <path-to-texture> <path-to-normal-map-texture>" << std::endl;
+		std::cerr << "Missing parameter: <path-to-model> <path-to-texture> <path-to-normal-map-texture> <path-to-pbr-packed-texture>" << std::endl;
 		exit (EXIT_FAILURE);
 	}
 	glutInit(&argc, argv);
@@ -195,14 +191,16 @@ int main (int argc, char ** argv) {
 	glutMotionFunc(motion);
 	glutMouseFunc(mouse);
 	key('?', 0, 0);
-	Context::rendering_type = Reflective;
+	Context::rendering_type = PBR;
 	std::string model_path(argv[1]);
 	loadDataWithAssimp(model_path);
 	beforeLoop();
 	std::string texture_path(argv[2]);
 	std::string normal_map_texture_path(argv[3]);
+	std::string pbr_packed_texture_path(argv[4]);
 	Context::materials[0]->m_texture = loadTexture2DFromFilePath(texture_path);
 	Context::materials[0]->m_normal_map_texture = loadTexture2DFromFilePath(normal_map_texture_path);
+	Context::materials[0]->m_pbr_packed_texture = loadTexture2DFromFilePath(pbr_packed_texture_path);
 	// Dark blue background
 	glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
 	glutMainLoop();

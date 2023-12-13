@@ -9,12 +9,12 @@ layout(location = 4) in vec2 uv0;
 out vec3 normalWorld;
 out vec3 positionWorld;
 
-uniform mat4 modelMatrix;
-uniform mat4 projectionMatrix;
-uniform mat4 viewMatrix;
+uniform mat4 model;
+uniform mat4 projection;
+uniform mat4 view;
 
 void main() {
-    normalWorld = normalize(mat3(transpose(inverse(modelMatrix))) * normal);
-    positionWorld = (modelMatrix * vec4(position,1.0)).xyz;
-    gl_Position = projectionMatrix * viewMatrix * modelMatrix * vec4(position,1.0); 
+    normalWorld = normalize(mat3(transpose(inverse(model))) * normal);
+    positionWorld = (model * vec4(position,1.0)).xyz;
+    gl_Position = projection * view * model * vec4(position,1.0); 
 }

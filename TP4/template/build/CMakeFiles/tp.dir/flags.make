@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/e20190010736/HAI719I-programmation3D/TP4/template/include -I/home/e20190010736/HAI719I-programmation3D/TP4/template/thirdparties/glm -I/home/e20190010736/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/../include -I/home/e20190010736/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/code/../include
+CXX_INCLUDES = -I/home/louis/Documents/HAI719I-programmation3D/TP4/template/include -I/home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/glm -I/home/louis/Documents/HAI719I-programmation3D/TP4/template/thirdparties/assimp/code/../include -I/home/louis/Documents/HAI719I-programmation3D/TP4/template/build/thirdparties/assimp/code/../include
 
 CXX_FLAGS = 
 
