@@ -39,8 +39,8 @@
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
 
-static const std::string SHADER_PATH ("Resources/Shaders/");
-static const std::string DEFAULT_MESH_FILENAME ("Resources/Models/dragon.off");
+static const std::string SHADER_PATH ("../Resources/Shaders/");
+static const std::string DEFAULT_MESH_FILENAME ("../Resources/Models/dragon.off");
 
 // Window parameters
 static GLFWwindow * windowPtr = nullptr;
@@ -189,6 +189,7 @@ public:
             output_image << std::endl;
         }
         delete pixels;
+        std::cout<<"Image written"<<std::endl;
         output_image.close();
     }
 };
@@ -294,19 +295,23 @@ struct Scene{
         shaderProgramPtr->set ("projectionMat", projectionMatrix); // Compute the projection matrix of the camera and pass it to the GPU program
         glm::mat4 modelMatrix = meshPtr->computeTransformMatrix ();
         glm::mat4 viewMatrix = cameraPtr->computeViewMatrix ();
-        glm::mat4 modelViewMatrix = viewMatrix * modelMatrix;
-        glm::mat4 normalMatrix = glm::transpose (glm::inverse (modelViewMatrix));
-        shaderProgramPtr->set ("modelViewMat", modelViewMatrix);
-        shaderProgramPtr->set ("normalMat", normalMatrix);
+        glm::mat4 normalMatrix = glm::transpose(glm::inverse(modelMatrix));
+        shaderProgramPtr->set("modelMat", modelMatrix);
+        shaderProgramPtr->set("viewMat",viewMatrix);
+        shaderProgramPtr->set("normalMat", normalMatrix);
 
 
         // Set the lights in the shader :
         for(int i = 0; i < scene_lights.size(); i++) {
             Light & light = scene_lights[i];
+            shaderProgramPtr->set("depthMVP",light.depthMVP);
             shaderProgramPtr->set(std::string("lightSources["+std::to_string(i)+"].position"), light.m_position);
             shaderProgramPtr->set(std::string("lightSources["+std::to_string(i)+"].color"), light.m_color);
             shaderProgramPtr->set(std::string("lightSources["+std::to_string(i)+"].intensity"), light.m_intensity);
             shaderProgramPtr->set(std::string("lightSources["+std::to_string(i)+"].isActive"), 1);
+            glActiveTexture(GL_TEXTURE0 + i);
+            glBindTexture(GL_TEXTURE_2D,scene_lights[i].shadowMapTexOnGPU);
+            shaderProgramPtr->set("lightSources["+std::to_string(i)+"].shadowMap",i);
         }
 
         // Set the material for the plane mesh :
