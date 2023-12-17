@@ -1,4 +1,4 @@
-# Install script for directory: /home/e20190010736/HAI719I-programmation3D/TP5/External
+# Install script for directory: /home/louis/Documents/HAI719I-programmation3D/TP5/External
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -44,9 +44,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/e20190010736/HAI719I-programmation3D/TP5/build/External/glad/cmake_install.cmake")
-  include("/home/e20190010736/HAI719I-programmation3D/TP5/build/External/glfw/cmake_install.cmake")
-  include("/home/e20190010736/HAI719I-programmation3D/TP5/build/External/glm/cmake_install.cmake")
+  include("/home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glad/cmake_install.cmake")
+  include("/home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glfw/cmake_install.cmake")
+  include("/home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glm/cmake_install.cmake")
 
 endif()
 

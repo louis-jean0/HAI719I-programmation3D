@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/e20190010736/HAI719I-programmation3D/TP5
+CMAKE_SOURCE_DIR = /home/louis/Documents/HAI719I-programmation3D/TP5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/e20190010736/HAI719I-programmation3D/TP5/build
+CMAKE_BINARY_DIR = /home/louis/Documents/HAI719I-programmation3D/TP5/build
 
 # Utility rule file for glad-generate-files.
 
@@ -70,8 +70,8 @@ External/glad/CMakeFiles/glad-generate-files: External/glad/src/glad.c
 External/glad/CMakeFiles/glad-generate-files: External/glad/include/glad/glad.h
 
 External/glad/src/glad.c:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating GLAD"
-	cd /home/e20190010736/HAI719I-programmation3D/TP5/External/glad && /usr/bin/python -m glad --profile=core --out-path=/home/e20190010736/HAI719I-programmation3D/TP5/build/External/glad --api=gl=4.5,gles2= --generator=c --extensions= --spec=gl
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating GLAD"
+	cd /home/louis/Documents/HAI719I-programmation3D/TP5/External/glad && /usr/bin/python3.10 -m glad --profile=core --out-path=/home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glad --api=gl=4.5,gles2= --generator=c --extensions= --spec=gl
 
 External/glad/include/glad/glad.h: External/glad/src/glad.c
 	@$(CMAKE_COMMAND) -E touch_nocreate External/glad/include/glad/glad.h
@@ -87,10 +87,10 @@ External/glad/CMakeFiles/glad-generate-files.dir/build: glad-generate-files
 .PHONY : External/glad/CMakeFiles/glad-generate-files.dir/build
 
 External/glad/CMakeFiles/glad-generate-files.dir/clean:
-	cd /home/e20190010736/HAI719I-programmation3D/TP5/build/External/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad-generate-files.dir/cmake_clean.cmake
+	cd /home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glad && $(CMAKE_COMMAND) -P CMakeFiles/glad-generate-files.dir/cmake_clean.cmake
 .PHONY : External/glad/CMakeFiles/glad-generate-files.dir/clean
 
 External/glad/CMakeFiles/glad-generate-files.dir/depend:
-	cd /home/e20190010736/HAI719I-programmation3D/TP5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/e20190010736/HAI719I-programmation3D/TP5 /home/e20190010736/HAI719I-programmation3D/TP5/External/glad /home/e20190010736/HAI719I-programmation3D/TP5/build /home/e20190010736/HAI719I-programmation3D/TP5/build/External/glad /home/e20190010736/HAI719I-programmation3D/TP5/build/External/glad/CMakeFiles/glad-generate-files.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/louis/Documents/HAI719I-programmation3D/TP5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/louis/Documents/HAI719I-programmation3D/TP5 /home/louis/Documents/HAI719I-programmation3D/TP5/External/glad /home/louis/Documents/HAI719I-programmation3D/TP5/build /home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glad /home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glad/CMakeFiles/glad-generate-files.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : External/glad/CMakeFiles/glad-generate-files.dir/depend
 

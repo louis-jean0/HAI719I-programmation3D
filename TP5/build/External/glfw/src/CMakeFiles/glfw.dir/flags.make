@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = -D_GLFW_USE_CONFIG_H
 
-C_INCLUDES = -I/home/e20190010736/HAI719I-programmation3D/TP5/External/glfw/include -I/home/e20190010736/HAI719I-programmation3D/TP5/External/glfw/src -I/home/e20190010736/HAI719I-programmation3D/TP5/build/External/glfw/src
+C_INCLUDES = -I/home/louis/Documents/HAI719I-programmation3D/TP5/External/glfw/include -I/home/louis/Documents/HAI719I-programmation3D/TP5/External/glfw/src -I/home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glfw/src
 
 C_FLAGS = -fPIC -Wall
 

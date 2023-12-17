@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/e20190010736/HAI719I-programmation3D/TP5/External/glm -I/home/e20190010736/HAI719I-programmation3D/TP5/External/glm/glm/..
+CXX_INCLUDES = -I/home/louis/Documents/HAI719I-programmation3D/TP5/External/glm -I/home/louis/Documents/HAI719I-programmation3D/TP5/External/glm/glm/..
 
 CXX_FLAGS = -O2 -Wno-long-long
 

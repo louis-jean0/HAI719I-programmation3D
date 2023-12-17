@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/e20190010736/HAI719I-programmation3D/TP5/build/External/glad/include
+C_INCLUDES = -I/home/louis/Documents/HAI719I-programmation3D/TP5/build/External/glad/include
 
 C_FLAGS = 
 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/e20190010736/HAI719I-programmation3D/TP5
+CMAKE_SOURCE_DIR = /home/louis/Documents/HAI719I-programmation3D/TP5
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/e20190010736/HAI719I-programmation3D/TP5/build
+CMAKE_BINARY_DIR = /home/louis/Documents/HAI719I-programmation3D/TP5/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/BaseGL.dir/depend.make
@@ -72,72 +72,72 @@ include CMakeFiles/BaseGL.dir/flags.make
 CMakeFiles/BaseGL.dir/Sources/Main.cpp.o: CMakeFiles/BaseGL.dir/flags.make
 CMakeFiles/BaseGL.dir/Sources/Main.cpp.o: ../Sources/Main.cpp
 CMakeFiles/BaseGL.dir/Sources/Main.cpp.o: CMakeFiles/BaseGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BaseGL.dir/Sources/Main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/Main.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/Main.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/Main.cpp.o -c /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/BaseGL.dir/Sources/Main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/Main.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/Main.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/Main.cpp.o -c /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Main.cpp
 
 CMakeFiles/BaseGL.dir/Sources/Main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaseGL.dir/Sources/Main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Main.cpp > CMakeFiles/BaseGL.dir/Sources/Main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Main.cpp > CMakeFiles/BaseGL.dir/Sources/Main.cpp.i
 
 CMakeFiles/BaseGL.dir/Sources/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaseGL.dir/Sources/Main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Main.cpp -o CMakeFiles/BaseGL.dir/Sources/Main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Main.cpp -o CMakeFiles/BaseGL.dir/Sources/Main.cpp.s
 
 CMakeFiles/BaseGL.dir/Sources/Error.cpp.o: CMakeFiles/BaseGL.dir/flags.make
 CMakeFiles/BaseGL.dir/Sources/Error.cpp.o: ../Sources/Error.cpp
 CMakeFiles/BaseGL.dir/Sources/Error.cpp.o: CMakeFiles/BaseGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BaseGL.dir/Sources/Error.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/Error.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/Error.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/Error.cpp.o -c /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Error.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/BaseGL.dir/Sources/Error.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/Error.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/Error.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/Error.cpp.o -c /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Error.cpp
 
 CMakeFiles/BaseGL.dir/Sources/Error.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaseGL.dir/Sources/Error.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Error.cpp > CMakeFiles/BaseGL.dir/Sources/Error.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Error.cpp > CMakeFiles/BaseGL.dir/Sources/Error.cpp.i
 
 CMakeFiles/BaseGL.dir/Sources/Error.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaseGL.dir/Sources/Error.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Error.cpp -o CMakeFiles/BaseGL.dir/Sources/Error.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Error.cpp -o CMakeFiles/BaseGL.dir/Sources/Error.cpp.s
 
 CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o: CMakeFiles/BaseGL.dir/flags.make
 CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o: ../Sources/Mesh.cpp
 CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o: CMakeFiles/BaseGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o -c /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.o -c /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Mesh.cpp
 
 CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Mesh.cpp > CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Mesh.cpp > CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.i
 
 CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190010736/HAI719I-programmation3D/TP5/Sources/Mesh.cpp -o CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/Mesh.cpp -o CMakeFiles/BaseGL.dir/Sources/Mesh.cpp.s
 
 CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o: CMakeFiles/BaseGL.dir/flags.make
 CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o: ../Sources/MeshLoader.cpp
 CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o: CMakeFiles/BaseGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o -c /home/e20190010736/HAI719I-programmation3D/TP5/Sources/MeshLoader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.o -c /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/MeshLoader.cpp
 
 CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190010736/HAI719I-programmation3D/TP5/Sources/MeshLoader.cpp > CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/MeshLoader.cpp > CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.i
 
 CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190010736/HAI719I-programmation3D/TP5/Sources/MeshLoader.cpp -o CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/MeshLoader.cpp -o CMakeFiles/BaseGL.dir/Sources/MeshLoader.cpp.s
 
 CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o: CMakeFiles/BaseGL.dir/flags.make
 CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o: ../Sources/ShaderProgram.cpp
 CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o: CMakeFiles/BaseGL.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o -c /home/e20190010736/HAI719I-programmation3D/TP5/Sources/ShaderProgram.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o -MF CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o.d -o CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.o -c /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/ShaderProgram.cpp
 
 CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/e20190010736/HAI719I-programmation3D/TP5/Sources/ShaderProgram.cpp > CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/ShaderProgram.cpp > CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.i
 
 CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/e20190010736/HAI719I-programmation3D/TP5/Sources/ShaderProgram.cpp -o CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/louis/Documents/HAI719I-programmation3D/TP5/Sources/ShaderProgram.cpp -o CMakeFiles/BaseGL.dir/Sources/ShaderProgram.cpp.s
 
 # Object files for target BaseGL
 BaseGL_OBJECTS = \
@@ -162,9 +162,9 @@ BaseGL: /usr/lib/x86_64-linux-gnu/librt.a
 BaseGL: /usr/lib/x86_64-linux-gnu/libm.so
 BaseGL: /usr/lib/x86_64-linux-gnu/libX11.so
 BaseGL: CMakeFiles/BaseGL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable BaseGL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable BaseGL"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/BaseGL.dir/link.txt --verbose=$(VERBOSE)
-	/usr/bin/cmake -E copy /home/e20190010736/HAI719I-programmation3D/TP5/build/BaseGL /home/e20190010736/HAI719I-programmation3D/TP5
+	/usr/bin/cmake -E copy /home/louis/Documents/HAI719I-programmation3D/TP5/build/BaseGL /home/louis/Documents/HAI719I-programmation3D/TP5
 
 # Rule to build all files generated by this target.
 CMakeFiles/BaseGL.dir/build: BaseGL
@@ -175,6 +175,6 @@ CMakeFiles/BaseGL.dir/clean:
 .PHONY : CMakeFiles/BaseGL.dir/clean
 
 CMakeFiles/BaseGL.dir/depend:
-	cd /home/e20190010736/HAI719I-programmation3D/TP5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/e20190010736/HAI719I-programmation3D/TP5 /home/e20190010736/HAI719I-programmation3D/TP5 /home/e20190010736/HAI719I-programmation3D/TP5/build /home/e20190010736/HAI719I-programmation3D/TP5/build /home/e20190010736/HAI719I-programmation3D/TP5/build/CMakeFiles/BaseGL.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/louis/Documents/HAI719I-programmation3D/TP5/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/louis/Documents/HAI719I-programmation3D/TP5 /home/louis/Documents/HAI719I-programmation3D/TP5 /home/louis/Documents/HAI719I-programmation3D/TP5/build /home/louis/Documents/HAI719I-programmation3D/TP5/build /home/louis/Documents/HAI719I-programmation3D/TP5/build/CMakeFiles/BaseGL.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/BaseGL.dir/depend
 
